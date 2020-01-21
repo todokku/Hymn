@@ -1,0 +1,22 @@
+
+{
+  "short_name": "Hymn",
+  "name": "Hymn",
+  "icons": [
+    {
+      "src": "src/img/ios-desktop.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "src/img/ios-desktop.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#002855",
+  "display": "fullscreen",
+  "scope": ".",
+  "theme_color": "#002855"
+}
