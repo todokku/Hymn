@@ -22,5 +22,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon.ico">
   <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="<?php echo $SECONDARY_COLOR; ?>">
   
+  <script src="src/js/material.min.js"></script>
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="src/js/material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+<link rel="stylesheet" href="src/css/styles.css" />
+
