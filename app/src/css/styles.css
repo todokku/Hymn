@@ -134,10 +134,28 @@ img.article-image {
   padding-bottom: 0;
 }
 
+ /*Player*/
+
+  #playerControls {
+    padding: 0% !important; justify-content: center; background-color: ghostwhite;
+    padding-bottom: 50px;
+    padding-left: 25%;
+  }
+
+  #playerControls > button{
+    margin-left: 5%;
+    margin-right: 15%;
+    color: white;
+    background: #47b7ac;
+  }
+
 .padding-top {
   padding: 10px 0 0;
 }
 
+.portfolio-navigation-row{
+  background-color: #47b7ac;
+}
 .portfolio-share-btn {
   position: relative;
   float: right;
