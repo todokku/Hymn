@@ -29,7 +29,20 @@
             </nav>
         </div>
 
-       <div id="playerControls" class="mdl-layout__header-row ">
+
+
+        <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width">
+                <div id="content" class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+            
+                
+     
+            </div>
+ 	      
+
+        </main>
+
+       <div id="playerControls" class="mdl-layout__header-row " style="padding-left: 15%;">
 
                         <button 
                     class="mdl-button mdl-js-button mdl-button--icon"
@@ -56,55 +69,9 @@
       </div>
       
 
-
-        <main class="mdl-layout__content">
-            <div class="mdl-grid portfolio-max-width">
-                <div id="content" class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
-            
-                
-     
-            </div>
- 	
-        </main>
     </div>
 
 
-<script type="text/javascript" src="src/js/app.js"></script>
-<script type="text/javascript">
-
-    index();
-    var playlists;
-    function index()
-    {
-        var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                playlists = JSON.parse(this.responseText);
-
-                var str = "";
-                
-                for (var i = 0; i < playlists.length; i++) {
-                   
-                    str += " <div class=\"mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp \"><div class=\"mdl-card__media\"><a href=\"#\"> <img class=\"article-image\" src=\""+playlists[i].picture+"\" border=\"0\" alt=\"\"></a></div> <div class=\"mdl-card__title \"><h2 class=\"mdl-card__title-text\"> "+playlists[i].title+" </h2></div> <div class=\"mdl-card__supporting-text\"><p>"+playlists[i].artist+"</p></div></div> ";
-                    console.log(playlists[i]);
-
-                }
-            
-                document.getElementById('content').innerHTML = str;
-            
-            }
-        };
-
-        xmlhttp.open("GET", "main.php?function=" + 'index', true);
-        xmlhttp.send();
-
-
-
-    }
-        
-
-
-</script>
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>

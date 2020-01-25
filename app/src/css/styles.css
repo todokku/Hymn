@@ -137,9 +137,8 @@ img.article-image {
  /*Player*/
 
   #playerControls {
-    padding: 0% !important; justify-content: center; background-color: ghostwhite;
-    padding-bottom: 50px;
-    padding-left: 25%;
+    padding: 0,0,0,0 !important; justify-content: center; background-color: ghostwhite;
+    
   }
 
   #playerControls > button{
