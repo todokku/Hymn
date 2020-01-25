@@ -2,7 +2,7 @@
 	
 	session_start(); 
 	require_once 'globals.php';
-
+  require_once 'main.php';
  ?>
 
   <title> <?php echo $APP_NAME; ?> </title>

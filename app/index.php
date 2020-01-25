@@ -59,96 +59,52 @@
 
         <main class="mdl-layout__content">
             <div class="mdl-grid portfolio-max-width">
-                <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
-                    <div class="mdl-card__media mdl-cell mdl-cell--12-col-tablet">
-                        <img class="article-image" src=" images/example-blog01.jpg" border="0" alt="">
-                    </div>
-                    
-                    <div class="mdl-cell mdl-cell--8-col">
-                        <h2 class="mdl-card__title-text">Velit anim eiusmod labore sit amet</h2>
-                        <div class="mdl-card__supporting-text padding-top">
-                            <span>Posted 2 days ago</span>
-                            <div id="tt1" class=" icon material-icons portfolio-share-btn">share</div>
-                            <div class="mdl-tooltip" for="tt1">
-                                Share via social media
-                            </div>
-                        </div>
-                        <div class="mdl-card__supporting-text no-left-padding">
-                            <p>Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Qui ullamco consectetur aute fugiat officia ullamco proident Lorem ad irure. Sint eu ut consectetur ut esse veniam laboris adipisicing aliquip minim anim labore commodo.</p>
-                            <span>Category: <a href="#">Latest</a></span>
-                        </div>
-                    </div>
-
-                </div>
+                <div id="content" class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+            
                 
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp ">
-                    <div class="mdl-card__media">
-                        <a href="#"> <img class="article-image" src=" images/example-blog04.jpg" border="0" alt=""></a>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <small>Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit.</small>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <p>Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Qui ullamco consectetur aute fugiat officia ullamco proident Lorem ad irure. Sint eu ut consectetur ut esse veniam.</p>
-                    </div>
-                </div>
-                
-                <div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet mdl-card  mdl-card mdl-shadow--4dp">
-                    <div class="mdl-card__title mdl-card--expand portfolio-blog-card-strip-bg mdl-color-text--white">
-                        <h2 class="mdl-card__title-text">adipiscing</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">
-                          View Updates
-                        </a>
-                    </div>
-                </div>
-                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-card  mdl-card mdl-shadow--4dp portfolio-blog-card-compact">
-                    <div class="mdl-card__media">
-                        <img class="article-image" src=" images/example-blog07.jpg" border="0" alt="">
-                    </div>
-                    <div class="mdl-card__title ">
-                        <h2 class="mdl-card__title-text">Loren</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">
-                          View Updates
-                        </a>
-                    </div>
-                </div>
+     
             </div>
  	
         </main>
     </div>
 
 
+<script type="text/javascript" src="src/js/app.js"></script>
+<script type="text/javascript">
+
+    index();
+    var playlists;
+    function index()
+    {
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                playlists = JSON.parse(this.responseText);
+
+                var str = "";
+                
+                for (var i = 0; i < playlists.length; i++) {
+                   
+                    str += " <div class=\"mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp \"><div class=\"mdl-card__media\"><a href=\"#\"> <img class=\"article-image\" src=\""+playlists[i].picture+"\" border=\"0\" alt=\"\"></a></div> <div class=\"mdl-card__title \"><h2 class=\"mdl-card__title-text\"> "+playlists[i].title+" </h2></div> <div class=\"mdl-card__supporting-text\"><p>"+playlists[i].artist+"</p></div></div> ";
+                    console.log(playlists[i]);
+
+                }
+            
+                document.getElementById('content').innerHTML = str;
+            
+            }
+        };
+
+        xmlhttp.open("GET", "main.php?function=" + 'index', true);
+        xmlhttp.send();
 
 
-<!-- ServiceWorker Registration -->
 
-  <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('service-worker.js')
-          .then(registration => {
-            console.log('App is ready!', registration);
-          })
-          .catch(err => {
-            console.error('Application Failed to register', err);
-          });
-        });
-      }
+    }
+        
 
-      navigator.serviceWorker.register('service-worker.js', {
-        scope: '.'
-      });
-  </script>
 
+</script>
 </body>
 </html>

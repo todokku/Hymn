@@ -17,6 +17,10 @@ class Controller
 
 	}
 	
+	function index()
+	{
+		return $this->database->fetch('playlists');
+	}
 }
 
 
